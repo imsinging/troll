@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="utf-8">
+		<title>很嚴格之字幕產生器</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="asset/bootstrap.min.css" rel="stylesheet">
+		<meta property="og:title" content="阿嶽真的很嚴格之產圖器"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content=""/>
+		<meta property="og:description" content="惡搞字幕產生器。柯南黑衣人、掐掐、鸚鵡兄弟"/>
+		<meta property="og:image" content="https://imsinging.github.io/troll/img/ayucant.png"/>
+		<style>
+			div.container {
+				text-align: center;
+				 max-width:1024px;
+			}
+			body{padding:20px; background:url('img/bg_w.jpg');}
+			.row{margin-bottom:15px;}
+			input{margin-bottom:10px;}
+			h2 {text-decoration: underline; margin:20px;}
+			.imgturn{width: 100%; max-width: 600px;}
+			.thumbnail{width:100px; margin:10px; display:inline-block;}
+			.sidebar{padding:20px; background:#ffffe9;}
+			#videos iframe{width:400px; height:300px;}
+		</style>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MTGK5RK');</script>
+		<!-- End Google Tag Manager -->
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-9570440324333151",
+		enable_page_level_ads: true
+	  });   
+	</script>
+	</head>
+	<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTGK5RK"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+		<div class="container">
+			<h1>很嚴格之字幕產生器 <a href="https://imsinging.github.io/troll/troll" class="btn btn-info">阿嶽圖產生器</a></h1>
+			<br><p></p>
+			<p>以後有新的作品會在粉絲頁發布，開發新功能中~。0816：增加最近很紅的雞</p>
+			<p><a onClick="ga('send', 'event', { 'eventCategory': 'blog連結', 'eventAction': '點擊blog連結', 'eventLabel':'點擊blog' });" href="https://iamiwasi.blogspot.tw/2017/08/ayutroll.html">作品賞析：https://iamiwasi.blogspot.tw/2017/08/ayutroll.html</a>  歡迎上粉絲頁投稿</p>
+			<hr>
+			<div class="row">
+			<div class="col-sm-12">
+				<input type="text" id="topRow" placeholder="請善用空格置左置右或隱藏欄位">
+			</div>
+			<div class="col-sm-12">
+				<input type="text" id="sbottomRow" placeholder="備用字幕區">
+			</div>
+			<div class="col-sm-12">
+				<input type="text" id="bottomRow" placeholder="字幕區">
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-sm-12">
+				<img id="saveas" class="imgturn" />
+				<canvas id="myCanvas" style="display: none;"></canvas>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-sm-12 sidebar">
+			<h2>點換圖</h2>
+			<div class="" id="imgmenu">
+			</div>
+			</div>
+			</div>		
+
+			<div class="row">
+				<a href="#" class="btn btn-primary" onClick="this.href=document.getElementById('saveas').src;ga('send', 'event', { 'eventCategory': '下載圖片', 'eventAction': '點下載圖片', 'eventLabel':'點FB連結' });" download="middle2faith.png">下載圖片(手機長按圖片另存新檔)</a>
+				<a href="https://facebook.com/childish.fake/" class="btn btn-link" onClick="ga('send', 'event', { 'eventCategory': 'FB連結', 'eventAction': '點FB連結', 'eventLabel':'點FB連結' });">FB:我是中二我很廢</a>
+			</div>
+			<br>	
+			<p style="background:#fdff95;">如果喜歡這個網頁的話，歡迎加粉絲頁、或點廣告贊助喔!有你們的鼓勵我才會更新喔</p>
+		</div>
+		<script src="asset/jquery-1.8.3.min.js"></script>
+		<script>
+		//--批次增圖
+		var imgmenu = document.getElementById('imgmenu');
+		var imgarray=['black1.jpg','black2.jpg','black3.jpg','black4.jpg','black5.jpg','black6.jpg','minsi1.jpg','minsi2.jpg'];
+		//docomo add
+		for(i=1;i<=11;i++){
+			var imgname = 'docomo'+i+'.jpg';
+			imgarray.push(imgname);
+		}
+		for(i=0;i<imgarray.length;i++){
+			var a = document.createElement('a');
+			var aattr = 'changeimg(\''+ imgarray[i]+'\');';
+			a.setAttribute("onClick", aattr);
+			a.innerHTML = '<image src="img/'+ imgarray[i] +'\" class=\"thumbnail\"></img>';
+			imgmenu.appendChild(a);
+		}
+		//--canvas
+		var bottomRow = "關愛智障的眼神";
+		var sbottomRow = "";
+		var topRow = "";
+		var boundWidth = 600;
+		var boundHeight = 400;
+		var vloaded=0;
+		var sloaded=0;
+		$("#myCanvas").prop("width", boundWidth);
+		$("#myCanvas").prop("height", boundHeight);		
+		window.onload = function() {
+			Img('docomo5.jpg');
+			Text();
+		};
+		
+		var img = new Image();
+		function changeimg(imgsrc){
+				img.src = "img/"+imgsrc;
+				cur=imgsrc;
+				}
+		function Img(imgsrc) {
+			cur=imgsrc;
+			var canvas = document.getElementById("myCanvas");
+			var context = canvas.getContext("2d");
+			img.src = "img/"+imgsrc+"?"+new Date().getTime();
+			img.onload = function () {
+				context.drawImage(img, 0, 0, boundWidth, boundHeight);
+				context.font = "bold 36px 'Microsoft JhengHei'";
+				context.textAlign = "center";
+				context.fillStyle = "#ffffff"
+				context.fillText(bottomRow, boundWidth/2, boundHeight-20);
+				context.fillText(sbottomRow, boundWidth/2, boundHeight-65);
+				context.fillText(topRow, boundWidth/2, 60);
+				
+				$("#saveas").prop("src", canvas.toDataURL());
+				if (sloaded != 1){loadscript();}
+				//if (vloaded != 1){loadvideos();}
+			}
+		}
+		function Text() {
+			var root = this;
+			$("#bottomRow").change(function () {
+				bottomRow = $(this).prop("value");
+				root.Img(cur);
+			});
+			$("#sbottomRow").change(function () {
+				sbottomRow = $(this).prop("value");
+				root.Img(cur);
+			});
+			$("#topRow").change(function () {
+				topRow = $(this).prop("value");
+				root.Img(cur);
+			});
+		}
+		
+		function loadscript() {
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.defer = 'difer';
+		script.async = 'async';
+		script.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+		document.body.appendChild(script);
+		return sloaded=1;
+		} 
+		// function loadvideos() {
+        // var iframe1 = document.createElement('iframe');
+        // var iframe2 = document.createElement('iframe');
+        // var videos = document.getElementById('videos');
+		// iframe1.src = 'https://www.youtube.com/embed/SwJ4PuHURaA?ecver=2';
+		// iframe2.src = 'https://www.youtube.com/embed/LvfgLbZaz3A?ecver=2';
+        // videos.appendChild(iframe1);
+        // videos.appendChild(iframe2);
+		// return vloaded=1;
+		// }			
+		</script>
+		<!-- 廣告 -->
+		<ins class="adsbygoogle"
+			 style="display:inline-block;width:300px;height:250px"
+			 data-ad-client="ca-pub-9570440324333151"
+			 data-ad-slot="4193290224"></ins>
+			 
+			 <!-- 自適應廣告 -->
+		<ins class="adsbygoogle"
+		style="display:block"
+		data-ad-client="ca-pub-9570440324333151"
+		data-ad-slot="3239841206"
+		data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- 廣告 -->
+		<ins class="adsbygoogle"
+			 style="display:inline-block;width:200px;height:200px"
+			 data-ad-client="ca-pub-9570440324333151"
+			 data-ad-slot="4193290224"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</body>
+</html>

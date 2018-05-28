@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="utf-8">
+		<title>阿嶽真的很嚴格之產圖器</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="asset/bootstrap.min.css" rel="stylesheet">
+		<meta property="og:title" content="阿嶽真的很嚴格之產圖器"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content=""/>
+		<meta property="og:description" content="阿嶽真的很嚴格之產圖器。之後會陸續出中國有嘻哈或者其它對話圖，樣式就freeStyle各位大大見諒。"/>
+		<meta property="og:image" content="https://imsinging.github.io/troll/img/fin-ayu.png"/>
+		<style>
+			div.container {
+				text-align: center;
+				 max-width:1024px;
+			}
+			body{padding:20px; background:url('img/bg_w.jpg');}
+			.row{margin-bottom:15px;}
+			input{margin-bottom:10px;}
+			h2 {text-decoration: underline; margin:20px;}
+			.imgturn{width: 100%; max-width: 600px;}
+			.thumbnail{width:100px; margin:20px auto;}
+			.sidebar{padding:20px; background:#ffffe9;}
+			.thumbnail{width:100px;}
+			.sidebar a{ width:100px;margin:10px; display:inline-block; vertical-align:top;}
+			.fin{width:200px;margin:10px; display:inline-block;}
+			#videos iframe{width:400px; height:300px;}
+		</style>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MTGK5RK');</script>
+		<!-- End Google Tag Manager -->
+		<!--script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script-->
+	<!--script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-9570440324333151",
+		enable_page_level_ads: true
+	  });   
+	</script-->
+	</head>
+	<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.10&appId=286034805137755";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTGK5RK"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+		<div class="container">
+			<h1>很嚴格之圖片產生器 <a href="https://imsinging.github.io/troll/troll-subtitle" class="btn btn-info">各種字幕產生器</a></h1>
+			<br><p></p>
+			<p>以後有新的作品會在粉絲頁發布，樣式就freeStyle各位大大見諒。</p>
+			<p><a onClick="ga('send', 'event', { 'eventCategory': 'blog連結', 'eventAction': '點擊blog連結', 'eventLabel':'點擊blog' });" href="https://iamiwasi.blogspot.tw/2017/08/ayutroll.html">  鄉民作品賞析：https://iamiwasi.blogspot.tw/2017/08/ayutroll.html</a>        投稿啦!</p>
+			<p>0828：1.加上FB留言區不知道能不能留言.. 2.什麼今天是情人節?! 3.舊版連結：<a onClick="ga('send', 'event', { 'eventCategory': '舊版連結', 'eventAction': '點擊舊版連結', 'eventLabel':'點擊舊版' });" href="https://imsinging.github.io/troll/troll-v1" target="_blank">https://imsinging.github.io/troll/troll-v1</a></p>
+			<hr>
+			<div class="row">
+			<div class="col-sm-12">
+				<input type="text" id="topRow" placeholder="上">
+			</div>
+			<div class="col-sm-4">
+				<input type="text"  id="leftCol1" placeholder="左一">
+			</div>
+			<div class="col-sm-4">
+				<input type="text" id="leftCol2" placeholder="左二">
+			</div>
+			<div class="col-sm-4">
+				<input type="text"  id="rightCol" placeholder="右">
+			</div>
+			<div class="col-sm-12">
+				<input type="text" id="bottomRow" placeholder="下">
+			</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<img id="saveas" class="imgturn" />
+					<canvas id="myCanvas" style="display: none;"></canvas>
+					<div class="col-sm-12" style="margin:10px;">
+					
+				<a href="#" class="btn btn-primary" onClick="this.href=document.getElementById('saveas').src;ga('send', 'event', { 'eventCategory': '下載圖片', 'eventAction': '點下載圖片', 'eventLabel':'點FB連結' });" download="middle2faith.png">下載圖片(手機長按圖片另存新檔)</a>
+				<a href="https://facebook.com/childish.fake/" class="btn btn-link" onClick="ga('send', 'event', { 'eventCategory': 'FB連結', 'eventAction': '點FB連結', 'eventLabel':'點FB連結' });">FB:我是中二我很廢</a>
+				</div>			
+			</div>
+			<div class="col-sm-6">
+			<div class="sidebar">
+			<h2>點換圖</h2>
+			<a onClick="changeimg('KP-1.jpg');">
+			<image src="img/KP-1.jpg" alt="你和那些反年改團體，柯文哲" class="thumbnail">不要再施鹽了，你有想過王八的感受嗎?</a>
+			<a onClick="changeimg('tsai815.jpg');">
+			<image src="img/tsai815.jpg" class="thumbnail">一定是大家愛不夠才會停電</a>
+			<a onClick="changeimg('ifan.jpg');">
+			<image src="img/ifan.jpg" class="thumbnail"></img>
+			你有freestyle嗎?</a>
+			<a onClick="changeimg('ayu2.jpg');">
+			<image src="img/ayu2.jpg" class="thumbnail"></img>
+			先發給他好不好</a>
+			<a onClick="changeimg('canni.jpg');">
+			<image src="img/canni.jpg" class="thumbnail"></img>
+			鎖鏈康尼</a>
+			<a onClick="changeimg('ayucant.jpg');">
+			<image src="img/ayucant.jpg" class="thumbnail">我覺得不行，我覺得很普通!</a>
+			<a onClick="changeimg('hotdog.jpg');">
+			<image src="img/hotdog.jpg" class="thumbnail"></img>阿嶽真的很嚴格，比想像中還要嚴格</a>
+			<a onClick="changeimg('ahan.jpg');">
+			<image src="img/ahan.jpg" class="thumbnail"></img>
+			上次說要請我喝茶湯會自己都忘記，白目，真的很靠北耶</a>	
+			</div>
+			</div>
+			</div>	
+			<hr>
+			<div class="row">
+			<div class="col-sm-12">
+			 <h2>
+			 現成圖片
+			 </h2>
+				<image src="img/fin-ayu.png" title="我覺得不行" alt="我覺得不行，阿嶽張震嶽" class="fin"></img>
+				<image src="img/fin-ahan.png" title="阿翰po影片" alt="陳志豪說要請我喝查湯會都忘記白目真的很靠北，阿翰po影片" class="fin"></img>
+				<image src="img/fin-ifan.png" title="你有freestyle嗎?" alt="你有freestyle嗎?吳亦凡" class="fin"></img>
+				<image src="img/fin-ayu2.jpg" title="先發給他好不好" alt="先發給他好不好，棠棠先記著，阿嶽張震嶽" class="fin"></img>
+				<image src="img/fin-dog.png" title="阿嶽真的很嚴格" alt="阿嶽真的很嚴格，比想像的嚴格，MChotdog" class="fin"></img>
+			</div>
+			</div>
+			<br>
+<div class="fb-comments" data-href="https://imsinging.github.io/troll/troll" data-numposts="5"></div>			
+			<h2>梗源↓↓</h2>
+			<br>
+			<div id="videos"></div>
+			<br>
+		</div>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 廣告 -->
+<!--ins class="adsbygoogle"
+style="display:inline-block;width:200px;height:200px"
+data-ad-client="ca-pub-9570440324333151"
+data-ad-slot="4193290224"></ins-->
+<!--script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script-->
+		<script src="asset/jquery-1.8.3.min.js"></script>
+		<script>
+		var leftCol1 = ["請","告","訴","全","台","北","市","民"];
+		var leftCol2 = [];
+		var rightCol = ["","誰","是","王","八","蛋"];
+		var bottomRow = "和那些反年改團體";
+		var topRow = "你";
+		var boundWidth = 600;
+		var boundHeight = 600;
+		var vloaded=0;
+		var sloaded=0;
+		$("#myCanvas").prop("width", boundWidth);
+		$("#myCanvas").prop("height", boundHeight);		
+		$("#canvas2").prop("width", boundWidth);
+		window.onload = function() {
+			Img('KP-1.jpg');
+			Text();
+		};
+		
+		var img = new Image();
+		function changeimg(imgsrc){
+				img.src = "img/"+imgsrc;
+				cur=imgsrc;
+				}
+		function Img(imgsrc) {
+			cur=imgsrc;
+			var canvas = document.getElementById("myCanvas");
+			var context = canvas.getContext("2d");
+			img.src = "img/"+imgsrc+"?"+new Date().getTime();
+			img.onload = function () {
+				context.drawImage(img, 0, 0, boundWidth, boundHeight);
+				context.font = "bold 44px 'Microsoft JhengHei'";
+				context.textAlign = "center";
+				context.fillText(bottomRow, 300, 560);
+				context.fillText(topRow, 300, 60);
+				context.font = "40px 微軟正黑體";
+				context.fillStyle = "#000000"
+				for (var i = 0; i < leftCol1.length; i++) {
+					context.fillText(leftCol1[i], 60, 120 + i * 44);
+				}
+				for (var i = 0; i < leftCol2.length; i++) {
+					context.fillText(leftCol2[i], 120 , 140 + i * 44);
+				}
+				for (var i = 0; i < rightCol.length; i++) {
+					context.fillText(rightCol[i], 530, 120 + i * 50);
+				}		
+				$("#saveas").prop("src", canvas.toDataURL());
+				if (sloaded != 1){loadscript();}
+				if (vloaded != 1){loadvideos();}
+			}
+		}
+		function Text() {
+			var root = this;
+			$("#leftCol1").change(function () {
+				leftCol1 = new Array();
+				leftCol1 = $(this).prop("value").split('');
+				root.Img(cur);
+			});
+			$("#leftCol2").change(function () {
+				leftCol2 = new Array();
+				leftCol2 = $(this).prop("value").split('');
+				root.Img(cur);
+			});
+			$("#bottomRow").change(function () {
+				bottomRow = $(this).prop("value");
+				root.Img(cur);
+			});
+			$("#rightCol").change(function () {
+				rightCol = new Array();
+				rightCol = $(this).prop("value").split('');
+				root.Img(cur);
+			});
+			$("#topRow").change(function () {
+				topRow = $(this).prop("value");
+				root.Img(cur);
+			});
+		}
+		
+		function loadscript() {
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.defer = 'difer';
+		script.async = 'async';
+		script.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+		document.body.appendChild(script);
+		return sloaded=1;
+		} 
+		function loadvideos() {
+        var iframe1 = document.createElement('iframe');
+        var iframe2 = document.createElement('iframe');
+        var videos = document.getElementById('videos');
+		iframe1.src = 'https://www.youtube.com/embed/SwJ4PuHURaA?ecver=2';
+		iframe2.src = 'https://www.youtube.com/embed/LvfgLbZaz3A?ecver=2';
+        videos.appendChild(iframe1);
+        videos.appendChild(iframe2);
+		return vloaded=1;
+		}			
+		</script>
+		<!-- 廣告 -->
+		<!--ins class="adsbygoogle"
+			 style="display:inline-block;width:300px;height:250px"
+			 data-ad-client="ca-pub-9570440324333151"
+			 data-ad-slot="4193290224"></ins-->
+			 
+			 <!-- 自適應廣告 -->
+		<!--ins class="adsbygoogle"
+		style="display:block"
+		data-ad-client="ca-pub-9570440324333151"
+		data-ad-slot="3239841206"
+		data-ad-format="auto"></ins>
+		<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-format="fluid"
+		 data-ad-layout="image-side"
+		 data-ad-layout-key="-fe+5w+3r-dk+bo"
+		 data-ad-client="ca-pub-9570440324333151"
+		 data-ad-slot="4507505043"></ins-->
+		 <!--300*600 -->
+		<!--ins class="adsbygoogle"
+		 style="display:inline-block;width:300px;height:600px"
+		 data-ad-client="ca-pub-9570440324333151"
+		 data-ad-slot="4216995508"></ins-->
+		<script>
+		//(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	
+	</body>
+</html>
